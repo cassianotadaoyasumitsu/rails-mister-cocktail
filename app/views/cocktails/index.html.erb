@@ -1,10 +1,10 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-between align-items-center">
-  <h1>Cocktails</h1>
-  <%= link_to 'Create', new_cocktail_path  %>
+<nav class="navbar justify-content-between">
+  <h1>Drink</h1>
+  <%= link_to 'Create', new_cocktail_path, class: 'btn btn-info rounded-pill' %>
 </nav>
 
 <div class="row">
-  <div class="col">
+  <div class="col text-center p-1">
     <p>All <%= Cocktail.count %> cocktails.</p>
   </div>
 </div>
@@ -13,14 +13,15 @@
 
 <div class="row justify-content-center">
   <% @cocktails.each do |cocktail| %>
-  <div class="card m-3" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="text-center"><%= cocktail.name %></h5>
-      <%= link_to 'One more dose', cocktail_path(cocktail)  %>
+    <div class="card m-4" style="width: 18rem;">
+        <%= image_tag "drinks.jpg", alt: "alttext", width: 286 %>
+      <div class="card-body">
+        <h5 class="card-title"><%= cocktail.name %></h5>
+        <%= link_to 'Add dose', cocktail_path(cocktail), class: 'btn btn-info' %>
+      </div>
     </div>
-  </div>
-  <% end %>
+    <% end %>
+
 </div>
 
 

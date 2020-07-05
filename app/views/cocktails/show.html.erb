@@ -1,10 +1,18 @@
 <h1><%= @cocktail.name %></h1>
 
+<hr>
+
 <% @cocktail.doses.each do |dose| %>
-  <p><%= dose.description %> - <%= dose.ingredient.name %> <%= link_to '🗑', dose_path(dose), method: :delete %></p>
+<p><%= dose.description %> - <%= dose.ingredient.name %> <%= link_to '🗑', dose_path(dose), method: :delete %></p>
 <% end %>
 
-<div class="row">
+<hr>
+
+<%= render 'cocktails/form_dose', dose: @dose, cocktail: @cocktail %>
+<br>
+<hr>
+
+<div class="row justify-content-center">
   <div class="col">
     <%= link_to 'Create', new_cocktail_dose_path(@cocktail) %>
   </div>
@@ -18,5 +26,3 @@
     <%= link_to 'Delete', cocktail_path(@cocktail), method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
 </div>
-
-<%= render 'cocktails/form_dose', dose: @dose, cocktail: @cocktail %>
