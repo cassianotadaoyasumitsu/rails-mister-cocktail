@@ -1,6 +1,16 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background-color: transparent;
+  transition: 0.1s background-color ease;
+  h1 {
+    font-family: 'Bangers', cursive;
+    font-size: 100px;
+  }
+}
+
+.navbar-lewagon-white {
+  background-color: black;
+  color: white;
 }
 
 .navbar-lewagon .navbar-collapse {

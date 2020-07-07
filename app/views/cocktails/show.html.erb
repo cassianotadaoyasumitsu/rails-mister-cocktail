@@ -1,6 +1,7 @@
-<h1><%= @cocktail.name %></h1>
+<div class="mt-5">
+  <h1><%= @cocktail.name %></h1>
+</div>
 
-<hr>
 
 <% @cocktail.doses.each do |dose| %>
 <p><%= dose.description %> - <%= dose.ingredient.name %> <%= link_to '🗑', dose_path(dose), method: :delete %></p>
@@ -12,17 +13,14 @@
 <br>
 <hr>
 
-<div class="row justify-content-center">
-  <div class="col">
-    <%= link_to 'Create', new_cocktail_dose_path(@cocktail) %>
-  </div>
-  <div class="col">
-    <%= link_to 'Back', cocktails_path %>
-  </div>
-  <div class="col">
-    <%= link_to 'Edit', edit_cocktail_path(@cocktail) %>
-  </div>
-  <div class="col">
-    <%= link_to 'Delete', cocktail_path(@cocktail), method: :delete, data: { confirm: 'Are you sure?' } %>
-  </div>
+<div class="row justify-content-around">
+
+    <%= link_to 'Back', root_path, class: 'btn btn-success' %>
+
+
+    <%= link_to 'Edit', edit_cocktail_path(@cocktail), class: 'btn btn-secondary' %>
+
+
+    <%= link_to 'Delete', cocktail_path(@cocktail), class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+
 </div>
