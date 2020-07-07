@@ -1,0 +1,3 @@
+<% @cocktail.doses.each do |dose| %>
+<p><%= dose.description %> - <%= dose.ingredient.name %> <%= link_to '🗑', dose_path(dose), method: :delete %></p>
+<% end %>
